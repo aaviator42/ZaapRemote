@@ -14,7 +14,12 @@ namespace Zaap\Remote;
 
 function send($method = NULL, $URI = NULL, $params = NULL, $payload = NULL){
 	
+	if(empty($method) || empty($URI)){
+		throw new Exception("Zaap Remote: Method or URI not specified");
+	}
+	
 	if(!empty($params)){
+		rtrim($params, '?');
 		$URI .= "?";
 		foreach($params as $key => $value){
 			$URI = $URI . $key . "=" . $value . "&";
@@ -41,10 +46,4 @@ function send($method = NULL, $URI = NULL, $params = NULL, $payload = NULL){
 	$content = curl_exec($ch);		
 	return $content;
 }
-
-
-
-
-
-
 
