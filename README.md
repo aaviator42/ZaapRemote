@@ -8,13 +8,13 @@ It was originally written to be used with APIs written with [Zaap](https://githu
 
 ### Syntax
 
-```
+```php
 \Zaap\Remote\send(<method>, <URI>, <params>, <payload>);
 ```
 
 ### Usage
 
-```
+```php
 <?php
 
 require 'ZaapRemote.php';
