@@ -35,4 +35,4 @@ echo \Zaap\Remote\send("GET", $URI, $params, $payload);
 * `<payload>`: Data (probably an array) to be JSON-encoded and transmitted in the request body. Optional. 
 
 ----------
-Documentation updated: `2020-09-13`
+Documentation updated: `2020-09-13`.
