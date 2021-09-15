@@ -35,7 +35,7 @@ echo \Zaap\Remote\send("GET", $URI, $params, $payload);
 * `<payload>`: Data (probably an array) to be JSON-encoded and transmitted in the request body. Optional. 
 
 ## Requirements
-1. [Supported versions of PHP](https://www.php.net/supported-versions.php). At the time of writing, that's PHP `7.3+`. Sesher will almost certainly work on older versions, but we don't test it on those, so be careful, do your own testing.
+1. [Supported versions of PHP](https://www.php.net/supported-versions.php). At the time of writing, that's PHP `7.3+`. ZaapRemote will almost certainly work on older versions, but we don't test it on those, so be careful, do your own testing.
 2. PHP cURL extenision should be enabled.
 
 ----------
