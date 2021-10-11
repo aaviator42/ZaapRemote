@@ -1,15 +1,18 @@
 <?php
 /*
 Zaap remote
-v1.1
+v1.2
 by @aaviator42
 
-2021-09-13
+2021-10-10
 
 
 */
 
 namespace Zaap\Remote;
+use Exception;
+
+const CURL_PEM_FILE = NULL; //path to certificate file for SSL requests
 
 
 function send($method = NULL, $URI = NULL, $params = NULL, $payload = NULL){
@@ -42,8 +45,17 @@ function send($method = NULL, $URI = NULL, $params = NULL, $payload = NULL){
 		$options[CURLOPT_HTTPHEADER] = $headers;
 	}
 	
+	if(!empty(CURL_PEM_FILE)){
+		$options[CURLOPT_CAINFO] = CURL_PEM_FILE;
+	}
+
 	curl_setopt_array($ch, $options);
 	$content = curl_exec($ch);		
+	
+	if(curl_errno($ch)){
+		throw new Exception("ZaapRemote: cURL Error: " . curl_error($ch));
+	}
+	
 	return $content;
 }
 
