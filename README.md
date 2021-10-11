@@ -1,10 +1,14 @@
 # ZaapRemote
 Easily make API requests from PHP  
-`v1.1`: `2021-09-13`
+`v1.2`: `2021-10-10`
 
 ZaapRemote contains a single `send` function that makes it super easy for you to send API requests. 
 
 It was originally written to be used with APIs written with [Zaap](https://github.com/aaviator42/Zaap), but can be used with pretty much any API, although you _might_ have to make minor changes depending on how the API you're interacting with expects queries to be formatted.
+
+You can configure a PEM file for cURL on line 15 if you'd like to make secure requests.
+
+The `send` function will throw an exception if an error occurs while making the request.
 
 ### Syntax
 
@@ -36,7 +40,7 @@ echo \Zaap\Remote\send("GET", $URI, $params, $payload);
 
 ## Requirements
 1. [Supported versions of PHP](https://www.php.net/supported-versions.php). At the time of writing, that's PHP `7.3+`. ZaapRemote will almost certainly work on older versions, but we don't test it on those, so be careful, do your own testing.
-2. PHP cURL extenision should be enabled.
+2. The PHP cURL extenision should be enabled.
 
 ----------
-Documentation updated: `2020-09-14`.
+Documentation updated: `2020-10-10`.
