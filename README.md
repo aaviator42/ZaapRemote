@@ -1,6 +1,6 @@
 # ZaapRemote
 Easily make API requests from PHP  
-`v1.2`: `2021-10-10`
+`v1.3`: `2021-10-12`
 
 ZaapRemote contains a single `send` function that makes it super easy for you to send API requests. 
 
@@ -10,10 +10,12 @@ You can configure a PEM file for cURL on line 15 if you'd like to make secure re
 
 The `send` function will throw an exception if an error occurs while making the request.
 
+By default `cURL` is configured to wait for 60 seconds for a response before it times out. You can change this if you want, modify `CURLOPT_TIMEOUT`.
+
 ### Syntax
 
 ```php
-\Zaap\Remote\send(<method>, <URI>, <params>, <payload>);
+\Zaap\Remote\send(<method>, <URL>, <params>, <payload>);
 ```
 
 ### Usage
@@ -23,19 +25,19 @@ The `send` function will throw an exception if an error occurs while making the 
 
 require 'ZaapRemote.php';
 
-$URI = "http://example.com/api.php/getUser/byID";
+$URL = "http://example.com/api.php/getUser/byID";
 $params = array("userid" = "1234", "token" => "1337");
 $payload = array("filename" => "1234.txt", "line" => "44");
 
-echo \Zaap\Remote\send("GET", $URI, $params, $payload);
+echo \Zaap\Remote\send("GET", $URL, $params, $payload);
 ```
 
 ### Explanation
 
 * `<method>`: Accepts a string. Use "GET", "PUT", "POST", "DELETE", whatever.
-* `<URI>`: The URI of the API
-* `<params>`: An array containing parameters that will be encoded into the query string. For example, `array("userid" = "1234")` becomes `<URI>/?userid=1234`.  
-  Optional. Don't use if your URI already has queries attached to it, it'll break the URI, just pass `NULL`. 
+* `<URL>`: The URL of the API
+* `<params>`: An array containing parameters that will be encoded into the query string. For example, `array("userid" = "1234")` becomes `<URL>/?userid=1234`.  
+  Optional. Don't use if your URL already has queries attached to it, it'll break the URL, just pass `NULL`. 
 * `<payload>`: Data (probably an array) to be JSON-encoded and transmitted in the request body. Optional. 
 
 ## Requirements
