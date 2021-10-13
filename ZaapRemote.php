@@ -15,24 +15,24 @@ use Exception;
 const CURL_PEM_FILE = NULL; //path to certificate file for SSL requests
 
 
-function send($method = NULL, $URI = NULL, $params = NULL, $payload = NULL){
+function send($method = NULL, $URL = NULL, $params = NULL, $payload = NULL){
 	
-	if(empty($method) || empty($URI)){
-		throw new Exception("Zaap Remote: Method or URI not specified");
+	if(empty($method) || empty($URL)){
+		throw new Exception("Zaap Remote: Method or URL not specified");
 	}
 	
 	if(!empty($params)){
 		rtrim($params, '?');
-		$URI .= "?";
+		$URL .= "?";
 		foreach($params as $key => $value){
-			$URI = $URI . $key . "=" . $value . "&";
+			$URL = $URL . $key . "=" . $value . "&";
 		}
 	}
 	
 	$ch = curl_init();
 	$options = array(
 		CURLOPT_CUSTOMREQUEST => $method,
-		CURLOPT_URL => $URI,
+		CURLOPT_URL => $URL,
 		CURLOPT_USERAGENT => "Zaap Remote v1.3",,
 		CURLOPT_TIMEOUT => 60,
 		CURLOPT_RETURNTRANSFER => true);
