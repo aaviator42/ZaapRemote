@@ -1,10 +1,10 @@
 <?php
 /*
 Zaap remote
-v1.2
+v1.3
 by @aaviator42
 
-2021-10-10
+2021-10-12
 
 
 */
@@ -33,7 +33,8 @@ function send($method = NULL, $URI = NULL, $params = NULL, $payload = NULL){
 	$options = array(
 		CURLOPT_CUSTOMREQUEST => $method,
 		CURLOPT_URL => $URI,
-		CURLOPT_USERAGENT => "Zaap Remote v1.0",
+		CURLOPT_USERAGENT => "Zaap Remote v1.3",,
+		CURLOPT_TIMEOUT => 60,
 		CURLOPT_RETURNTRANSFER => true);
 	
 	if(!empty($payload)){
