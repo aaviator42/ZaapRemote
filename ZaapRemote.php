@@ -33,7 +33,7 @@ function send($method = NULL, $URL = NULL, $params = NULL, $payload = NULL){
 	$options = array(
 		CURLOPT_CUSTOMREQUEST => $method,
 		CURLOPT_URL => $URL,
-		CURLOPT_USERAGENT => "Zaap Remote v1.3",,
+		CURLOPT_USERAGENT => "Zaap Remote v1.3",
 		CURLOPT_TIMEOUT => 60,
 		CURLOPT_RETURNTRANSFER => true);
 	
