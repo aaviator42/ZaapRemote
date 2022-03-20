@@ -45,4 +45,4 @@ echo \Zaap\Remote\send("GET", $URL, $params, $payload);
 2. The PHP cURL extenision should be enabled.
 
 ----------
-Documentation updated: `2020-10-10`.
+Documentation updated: `2022-03-19`.
