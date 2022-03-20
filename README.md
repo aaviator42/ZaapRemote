@@ -37,7 +37,7 @@ echo \Zaap\Remote\send("GET", $URL, $params, $payload);
 * `<method>`: Accepts a string. Use "GET", "PUT", "POST", "DELETE", whatever.
 * `<URL>`: The URL of the API
 * `<params>`: An array containing parameters that will be encoded into the query string. For example, `array("userid" = "1234")` becomes `<URL>/?userid=1234`.  
-  Optional. Don't use if your URL already has queries attached to it, it'll break the URL, just pass `NULL`. 
+  Optional. Don't use if your URL already has queries attached to it, it'll break the URL, just pass `NULL`. Optional.
 * `<payload>`: Data (probably an array) to be JSON-encoded and transmitted in the request body. Optional. 
 
 ## Requirements
