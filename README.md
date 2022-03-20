@@ -1,6 +1,6 @@
 # ZaapRemote
 Easily make API requests from PHP  
-`v1.3`: `2021-10-12`
+`v1.3`: `2022-01-01`
 
 ZaapRemote contains a single `send` function that makes it super easy for you to send API requests. 
 
