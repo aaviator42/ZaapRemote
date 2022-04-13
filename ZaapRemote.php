@@ -22,7 +22,7 @@ function send($method = NULL, $URL = NULL, $params = NULL, $payload = NULL){
 	}
 	
 	if(!empty($params)){
-		rtrim($params, '?');
+		rtrim(URL, '?');
 		$URL .= "?";
 		foreach($params as $key => $value){
 			$URL = $URL . $key . "=" . $value . "&";
