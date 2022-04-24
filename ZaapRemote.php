@@ -12,7 +12,7 @@ by @aaviator42
 namespace Zaap\Remote;
 use Exception;
 
-const CURL_PEM_FILE = NULL; //path to certificate file for SSL requests
+const CURL_PEM_FILE = NULL; //path to certificate file for TLS requests
 
 
 function send($method = NULL, $URL = NULL, $params = NULL, $payload = NULL){
